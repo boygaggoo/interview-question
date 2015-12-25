@@ -12,6 +12,8 @@ public class LinkedListTest {
 		 words=new LinkedList();
 		 words.add("hello");
 			words.add("new");
+			words.add("world");
+			words.add("reason");
 	        
 	    }
 	@Test
@@ -23,12 +25,22 @@ public class LinkedListTest {
 	@Test
 	public void getTest() {
 		
-		assertEquals("new",words.get(1));
+		assertEquals("hello",words.get(0));
 	}
 	@Test
 	public void removeTest() {
 		words.add("test");
+		assertEquals("test",words.remove("test"));
 		assertEquals("new",words.remove("new"));
+	}
+	@Test
+	public void removeDupl() {
+		words.add("new");
+		words.add("test");
+		words.add("test");
+		words.removeDuplicates();
+		words.print();
+	
 	}
 
 }
