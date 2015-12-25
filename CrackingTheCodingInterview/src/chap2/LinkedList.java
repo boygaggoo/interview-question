@@ -1,5 +1,9 @@
 package chap2;
 
+import java.util.HashSet;
+
+import java.util.Set;
+
 /**
  * Singly LinkedList implementation
  * @author Siddiq Ahmed Syed
@@ -15,17 +19,22 @@ public class LinkedList {
 	}
 
 	
-	public void add(Object word) {
+	public boolean add(Object word) {
 		Node newEntry=new Node(word);
+		Node pointer=first;
 		if(first==null){
 		first=newEntry;
 		first.next=null;
 		size++;
+		return true;
 	}
-		else{
-			first.next=newEntry;
-			size++;
+		while(pointer.next!=null){
+			pointer=pointer.next;
 		}
+		pointer.next=newEntry;
+			size++;
+			return true;
+		
 	}
 
 	public boolean contains(Object word) {
@@ -68,11 +77,20 @@ public class LinkedList {
 	public Object remove(Object word) {
 		Object remElem=null;
 		Node pointer=first;
-		while(pointer!=null){
-			if(pointer.data.equals(word)){
-				remElem=pointer.data;
-				pointer.next=null;
+		if(pointer.data.equals(word)){
+			remElem=pointer.data;
+			first=first.next;
+			size--;
+			return remElem;
+
+	
+		}
+		while(pointer.next!=null){
+			if(pointer.next.data.equals(word)){
+				remElem=pointer.next.data;
 				pointer=pointer.next;
+				
+				
 				size--;
 				return remElem;
 			}
@@ -80,6 +98,35 @@ public class LinkedList {
 		}
 		return remElem;
 	}
+
+/**
+ * Question from chapter 2 of Cracking the coding interview
+ */
+	public void removeDuplicates() {
+		HashSet table = new HashSet();
+		Node pointer=first;
+		Node prev=null;
+		while(pointer!=null){
+			if(table.contains(pointer.data)){
+				prev.next=pointer.next;
+			}else{
+				table.add(pointer.data);
+				prev=pointer;
+			}
+			pointer=pointer.next;
+		}
+		
+	}
+
+
+public void print() {
+	Node pointer=first;
+	while(pointer!=null){
+		System.out.println(pointer.data);
+		pointer=pointer.next;
+	}
+	
+}
 	
 }
 class Node{
