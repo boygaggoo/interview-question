@@ -2,7 +2,11 @@ package datastructures;
 
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * Solution to the questions of http://codingbat.com/java/Array-1
+ * @author Siddiq Ahmed Syed
+ *
+ */
 public class ArraysPractice {
 
 	public static String maxMin(int[] arr) {
