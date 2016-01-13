@@ -1,5 +1,6 @@
 package datastructures;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 /**
@@ -322,6 +323,48 @@ public class ArraysPractice {
 		else
 			front = new int[0];
 		return front; 
+	}
+	public static int [] removeDuplicates(int[] a) {
+		for (int i=0; i<a.length; i++){
+			for (int j=i+1; j<a.length; j++){
+				if (a[i]==a[j])
+					a[j]=0;
+			}
+			
+		}
+		
+		return a;
+		// TODO Auto-generated method stub
+		
+	}
+	public static int [] removeDuplicatesBetter(int[] a) {
+		HashSet<Integer> test=new HashSet<>();
+		for (int i=0; i<a.length; i++){
+			if(!test.contains(a[i])){
+				test.add(a[i]);
+			}
+			else{
+				a[i]=0;
+			}
+			
+		}
+		
+		return a;
+		// TODO Auto-generated method stub
+		
+	}
+	
+		
+	
+	public static int findMissingInteger(int[] a, int count) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<a.length-1;i++){
+			if( (a[i]+1) != (a[i+1])){
+				return (a[i+1]-1);
+			}
+			
+		}
+		return -1;
 	}
 
 
