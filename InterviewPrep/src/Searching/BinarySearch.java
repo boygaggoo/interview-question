@@ -8,6 +8,18 @@ public class BinarySearch {
 //		System.out.println(BinarySearch.searchRecursive(a,0,a.length-1,10));
 //	    System.out.println(BinarySearch.firstOccurance(b,5));
 	    System.out.println(BinarySearch.lastOccurance(b,5));
+	    System.out.println(BinarySearch.allOccurance(b,5));
+	}
+
+private static int allOccurance(int[] b, int key) {
+		// TODO Auto-generated method stub
+	    int first=firstOccurance(b, key);
+	    int last=lastOccurance(b, key);
+	    if(first==-1||last==-1){
+		return -1;
+	    }else{
+	    	return(last-first+1);
+	    }
 	}
 
 /**
@@ -69,6 +81,7 @@ public class BinarySearch {
 
 	 /**
 	    * This is sample problem based on BinarySearch 
+	    * The question is to find the first occurance of the particular element 
 	    * if array is {1,2,10,10,10,3} the result should be 2
 	    * @param a
 	    * @param i
@@ -93,7 +106,8 @@ public class BinarySearch {
 		}
 
 		 /**
-		    * This is sample problem based on BinarySearch 
+		    * This is sample problem based on BinarySearch
+		    * The question is to find the last occurance of the particular element 
 		    * if array is {1,2,10,10,10,3} the result should be 4
 		    * @param a
 		    * @param i
