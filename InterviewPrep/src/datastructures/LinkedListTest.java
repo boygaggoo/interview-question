@@ -129,6 +129,86 @@ public class LinkedListTest {
 		ll.print();
 		
 	}
+	@Test
+	public void kToLastElemTest(){
+		ll.add(1);
+		ll.add(2);
+		assertEquals(1,ll.kToLastElem(1));
+		assertEquals(2,ll.kToLastElem(0));
+	}
+	@Test
+	public void kToLastElemRecTest(){
+		ll.add(1);
+		ll.add(2);
+		assertEquals(1,ll.kToLastRecElem(1));
+		assertEquals(2,ll.kToLastRecElem(0));
+	}
+	@Test
+	public void kToLastElemIterTest(){
+		ll.add(1);
+		ll.add(2);
+		ll.add(4);
+		ll.add(5);
+		ll.add(6);
+		assertEquals(6,ll.kToLastIterElem(1));
+		assertEquals(4,ll.kToLastIterElem(3));
+//		assertEquals(2,ll.kToLastIterElem(0));
+	}
+	@Test
+	public void deleteNodetest(){
+		ll.add(1);
+		ll.add(2);
+		ll.add(4);
+		ll.add(5);
+		ll.add(6);
+		Node n=ll.getNode(2);
+		
+		assertEquals(true,ll.deleteNode(n));
+		
 	
+	}
+	@Test
+	public void partitionTest(){
+		ll.add(4);
+		ll.add(2);
+		ll.add(1);
+		ll.add(3);
+		ll.print();
+		Node n=ll.partition(2);
+	    while(n!=null){
+	    	System.out.println(n.data);
+	    	n=n.next;
+	    
+	    }
+	    }
+	@Test
+	public void isPalindromeTest(){
+	ll.add(1);
+	ll.add(0);
+	ll.add(0);
+	ll.add(1);
+	assertEquals(true,ll.isPalindrome());
+	ll.add(4);
+	ll.add(2);
+	assertEquals(false, ll.isPalindrome());
+	
+	}
+	@Test
+	public void removeKLastElemTest(){
+	ll.add(1);
+	ll.add(3);
+	ll.add(0);
+	ll.add(1);
+	ll.print();
+	assertEquals(0,ll.removeKLast(2));
+	ll.print();
+	ll.add(5);
+	ll.add(10);
+	ll.print();
+	ll.removeKLast(3);
+	ll.print();
+	
+	}
+
 
 }

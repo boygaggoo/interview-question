@@ -1,6 +1,7 @@
 package datastructures;
 
 import java.util.HashSet;
+import java.util.Stack;
 
 public class LinkedList {
      
@@ -245,6 +246,180 @@ public void removeAllDuplicates2() {
 		curr=curr.next;
 	}
 	
+}
+
+/**
+ * Another question from chapter 2 of Cracking the code
+ * This method will return the last elem based on the input.
+ * This is the naive approach
+ * @param index
+ * @return
+ */
+public Object kToLastElem(int index) {
+	Node curr=head;
+	int count=1;
+	int target=size-index;
+	while(curr!=null){
+		if(count==target){
+			break;
+			
+		}
+		count++;
+		curr=curr.next;
+	}
+	return curr.data;
+}
+
+
+/**
+ * Another question from chapter 2 of Cracking the code
+ * This method will return the last elem based on the input.
+ * This is the recursive approach
+ * @param index
+ * @return
+ */
+public Object kToLastRecElem(int i) {
+	return getRecursive(head,i);
+}
+
+/**
+ * helper method for the previous method
+ * @param head
+ * @param i
+ * @return
+ */
+private int getRecursive(Node head, int i) {
+	if(head == null){
+		return 0;
+	}
+	int j=getRecursive(head.next, i)+1;
+	if(j==i){
+		System.out.println(head.data);
+	}
+	return j;
+}
+/**
+ * This the solution to the cracking the coding interview question Chapter 2
+ * Finding k to last elem without using the size method
+ * @param index
+ * @return
+ */
+
+public Object kToLastIterElem(int index) {
+	
+	Node p1=head;
+	Node p2=head;
+	for(int i=0;i<index-1;i++){
+		p2=p2.next;
+	}
+	if(p2==null)return null;
+	while(p2.next!=null){
+		p1=p1.next;
+		p2=p2.next;
+	}
+	return p1.data;
+}
+
+
+public Node getNode(int index) {
+	// TODO Auto-generated method stub
+	Node curr=head;
+	for(int i=1;i<index;i++){
+		curr=curr.next;
+	}
+	if(curr==null)return null;
+	return curr;
+}
+
+
+public boolean deleteNode(Node n) {
+	// TODO Auto-generated method stub
+	if(n==null){
+		return false;
+	}
+	Node temp=n.next;
+	temp.data=n.data;
+	temp.next=n.next;
+	
+	return true;
+}
+/**
+ * This is the question from cracking the code and this method
+ * arranges the nodes based the given pKey.
+ * All the nodes less than or equal to comes before pKeys and viceversa
+ * @param i
+ * @return 
+ */
+
+public Node partition(int pKey) {
+	// TODO Auto-generated method stub
+	Node curr=head;
+	Node before=null;
+	Node after=null;
+	while(curr!=null){
+		Node next=curr.next;
+		if((int)curr.data<=pKey){
+			curr.next=before;
+			before=curr;
+		}
+		else{
+			curr.next=after;
+			after=curr;
+		}
+		curr=next;
+	}
+	if(before==null){return after;}
+	Node head=before;
+	while(before.next!=null){
+		before=before.next;
+	}
+	before.next=after;
+	return head;
+}
+/**
+ * This is one of the question from cracking the coding.
+ * It checks if the list is palindrome eg 1->0->0->1 is palindrome
+ * 
+ * @return true|false
+ */
+
+public boolean isPalindrome() {
+	Stack s=new Stack<>();
+	Node curr=head;
+	for(int i=0;i<size()/2;i++){
+		s.push(curr.data);
+		curr=curr.next;
+	}
+	while(curr!=null){
+		if(curr.data!=s.pop()){
+			return false;
+		}
+		curr=curr.next;
+	}
+	return true;
+}
+/**
+ * This is the question on the leet code.
+ * @param i
+ * @return
+ */
+
+public Object removeKLast(int index) {
+	Node p1=head;
+	Node p2=head;
+	for (int i=0;i<index;i++){
+		p1=p1.next;
+		
+	}
+	while(p1.next!=null){
+		p1=p1.next;
+		p2=p2.next;
+	}
+	System.out.println("p1:"+p2.data+" p2:"+p2.next.data);
+	Object data=p2.next.data;
+	p2.next=p2.next.next;
+	
+	return data;
 }
     
 }
