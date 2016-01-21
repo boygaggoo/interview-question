@@ -1,5 +1,7 @@
 package datastructures;
 
+import java.util.HashSet;
+
 public class LinkedList {
      
 	Node head;
@@ -147,5 +149,102 @@ public class LinkedList {
 		ll.add(curr.data);
 		return ll;
 	}
+
+
+	public Object removeFirst() {
+		
+		if(size<=1){
+			Object data=head.data;
+			head=head.next;
+			size--;
+			return data;
+		}
+		else{
+			Object data=head.data;
+			
+			head=head.next;
+//			curr=null;
+			
+			size--;
+			
+			return data;
+		}
+		
+	}
+
+
+	public Object removeAt(int index) {
+		// TODO Auto-generated method stub
+		Node curr=head;
+		int counter=0;
+		Node temp=curr.next;
+		if(index==0){
+			Object data=curr.data;
+			head=head.next;
+			size--;
+			return data;
+		}
+			while(curr!=null){
+				if(counter==index-1){
+					
+					break;
+				}
+				curr=curr.next;
+				temp=temp.next;
+				counter++;
+			}
+            Object data=curr.next.data;
+			curr.next=curr.next.next;
+			size--;
+			return data;
+		
+		
+	}
+
+/**
+ * This is a question from cracking the coding book
+ * compexity O(n)
+ */
+	public void removeAllDuplicates() {
+	    Node n=head;
+	    Node prev=null;
+	    HashSet hs=new HashSet<>();
+	    while(n!=null){
+	    	if(hs.contains(n.data)){
+	    		prev.next=n.next;
+	    	}
+	    	else{
+	    		hs.add(n.data);
+	    		prev=n;
+	    	}
+	    	n=n.next;
+	    }
+		
+	}
+/**
+ * Follow up question for above. This does not use additional storage
+ * complexity is O(n^2)
+ */
+
+public void removeAllDuplicates2() {
+	// TODO Auto-generated method stub
+	
+	Node curr=head;
+	
+	while(curr!=null){
+		Node n=curr;
+		while(n.next!=null){
+			if(n.next.data.equals(curr.data)){
+				n.next=n.next.next;
+			}else{
+			n=n.next;
+			
+			}
+			
+		}
+		curr=curr.next;
+	}
+	
+}
     
 }

@@ -79,6 +79,56 @@ public class LinkedListTest {
 		ll.print();
 		ll.removeDuplicates().print();
 	}
+	@Test
+	public void removeTest(){
+		ll.add(2);
+		ll.add(4);
+		assertEquals(2,ll.removeFirst());
+		assertEquals(1, ll.size());
+		assertEquals(4, ll.removeFirst());
+		assertEquals(0, ll.size());
+		ll.add(1);
+		assertEquals(1, ll.removeFirst());
+		assertEquals(null, ll.getFirst());
+		
+	}
+	@Test
+	public void removeAtTest(){
+		ll.add(1);
+		ll.add(2);
+		
+		ll.add(3);
+		assertEquals(2, ll.removeAt(1));
+		ll.add(4);
+		ll.add(5);
+		ll.print();
+		assertEquals(1, ll.removeAt(0));
+		
+		ll.print();
+		assertEquals(5, ll.removeAt(ll.size()-1));
+	}
+	@Test
+	public void removeDuplicates(){
+		ll.add(1);
+		ll.add(2);
+		ll.add(1);
+		ll.add(3);
+		ll.add(3);
+		ll.add(1);
+		ll.add(1);
+//		ll.print();
+		ll.removeAllDuplicates();
+		ll.add(3);
+		ll.add(1);
+		ll.add(1);
+		ll.print();
+		ll.removeAllDuplicates2();
+		ll.add(1);
+		ll.print();
+		ll.removeAllDuplicates2();
+		ll.print();
+		
+	}
 	
 
 }
