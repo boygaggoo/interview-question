@@ -1,8 +1,9 @@
 package chap2;
 
 import java.util.HashSet;
-
 import java.util.Set;
+
+
 
 /**
  * Singly LinkedList implementation
@@ -109,6 +110,7 @@ public class LinkedList {
 		while(pointer!=null){
 			if(table.contains(pointer.data)){
 				prev.next=pointer.next;
+				size--;
 			}else{
 				table.add(pointer.data);
 				prev=pointer;
@@ -127,7 +129,38 @@ public void print() {
 	}
 	
 }
+
+
+public Object getKLast(int i) {
+	// TODO Auto-generated method stub
+	int count=size;
+	Node pointer=first;
+	while(pointer!=null){
+		if(count==i){
+			return pointer.data;
+		}
+		pointer=pointer.next;
+		count--;
+	}
+	return null;
+}
+
+
+public Object recursivegetKLast(int index) {
 	
+		
+		Node p1=first;
+		Node p2=first;
+		for(int i=0;i<index-1;i++){
+			p2=p2.next;
+		}
+		if(p2==null)return null;
+		while(p2.next!=null){
+			p1=p1.next;
+			p2=p2.next;
+		}
+		return p1.data;
+	}
 }
 class Node{
 	public Object data;

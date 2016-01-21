@@ -33,13 +33,37 @@ public class LinkedListTest {
 		assertEquals("test",words.remove("test"));
 		assertEquals("new",words.remove("new"));
 	}
+	/**
+	 * This is the interview question
+	 */
 	@Test
 	public void removeDupl() {
 		words.add("new");
 		words.add("test");
 		words.add("test");
 		words.removeDuplicates();
-		words.print();
+//		words.print();
+	
+	}
+	/**
+	 * This is the interview question
+	 */
+	@Test
+	public void getKLastElemTest() {
+		words.add("cracking");
+		words.add("interview");
+		assertEquals("interview",words.getKLast(1));
+		assertEquals("cracking",words.getKLast(2));
+	
+	
+	}
+	@Test
+	public void recursivegetKLastElemTest() {
+		words.add("cracking");
+		words.add("interview");
+		assertEquals("interview",words.recursivegetKLast(1));
+	
+	
 	
 	}
 
