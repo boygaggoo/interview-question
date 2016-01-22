@@ -31,4 +31,22 @@ public class Stack {
 		// TODO Auto-generated method stub
 		return top.data;
 	}
+
+	public int search(int k) {
+		Node p=top;
+		int pos=1;
+		while(p!=null){
+			if((int)p.data==k){
+				break;
+			}
+			pos++;
+			p=p.next;
+		}
+		return pos;
+	}
+
+	public boolean empty() {
+		// TODO Auto-generated method stub
+		return top==null;
+	}
 }

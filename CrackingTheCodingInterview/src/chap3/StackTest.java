@@ -37,6 +37,29 @@ public class StackTest {
         assertEquals(1, s.peek());
         
 	}
+	@Test
+	public void javaStacktest(){
+		java.util.Stack s=new java.util.Stack<>();
+		s.push(1);
+		s.push(2);
+		s.push(3);
+//		System.out.println(s.search(1));
+	}
+	@Test
+	public void searchTest(){
+		s=new Stack();
+		s.push(1);
+		s.push(2);
+		s.push(3);
+		assertEquals(3, s.search(1));
+	}
+	@Test
+	public void isEmptyTest(){
+		s=new Stack();
+		assertEquals(true, s.empty());
+		s.push(1);
+		assertEquals(false, s.empty());
+	}
 	
 
 }	
