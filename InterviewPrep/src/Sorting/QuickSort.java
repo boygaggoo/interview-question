@@ -35,7 +35,7 @@ public class QuickSort {
 
     private static int partition(int[] a, int p, int r) {
     	Random rand = new Random();
-    	int num = rand.nextInt(a.length);
+    	int num = rand.nextInt(r+1);
         int x=a[num];//choosing random pivot will highly decrease complexity )(n ^2)
        // int x = a[p];
         int i = p-1 ;
