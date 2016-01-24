@@ -60,6 +60,24 @@ public class StackTest {
 		s.push(1);
 		assertEquals(false, s.empty());
 	}
-	
+	@Test
+	public void minTest(){
+		s=new Stack();
+		s.push(3);
+		s.push(2);
+		
+//		assertEquals(s.getMin(), 1);
+//		s.pop();
+		assertEquals(2, s.getMin());
+		s.push(1);
+		assertEquals(1, s.getMin());
+		s.pop();
+		assertEquals(2, s.getMin());
+	}
+	@Test
+	public void paranthesisTest(){
+	  assertEquals(true, Paranthesis.verify("()[]"));
+	  assertEquals(true, Paranthesis.verify("[([()])]"));
+	}
 
 }	
