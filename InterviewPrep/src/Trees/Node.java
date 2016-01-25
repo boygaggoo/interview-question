@@ -10,4 +10,7 @@ public class Node {
 	  right=null;
 	  data=Data;
   }
+  Node(){
+	  
+  }
 }

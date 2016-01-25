@@ -1,25 +1,53 @@
 package Trees;
 
 public class BinaryTree {
-   Node root;
-   
-   public BinaryTree(){
-	   root=null;
-   }
-   public void insert(int data){
-	   root=insert(root,data);
-   }
-private Node insert(Node root,int data) {
-	if(root==null){
-		root=new Node(data);
+	Node root;
+
+	
+	public BinaryTree(Object data) {
+		root=new Node();
+		root.data=data;
 	}
-	else if(data<=(int)root.data){
-		root.left=insert(root.left,data);
+
+
+	public BinaryTree(Object data, BinaryTree left, BinaryTree right) {
+		root=new Node();
+		root.data=data;
+		root.left=left.root;
+		root.right=right.root;
+	}
+
+	  private static int height(Node n)
+	   {
+	          if (n == null) { return 0; }
+	         else { return 1 + Math.max(height(n.left), height(n.right)); }
+	   }
+	public double getHeight() {
+		return height(root);
+	}
+
+
+	public void addLSubtree(BinaryTree left) {
+		root.left=left.root;
+	}
+
+	public void addRSubtree(BinaryTree right) {
 		
-	}
-	else{
-		root.right=insert(root.right,data);
-	}
-	return root;
+	root.right=right.root;
 }
-}
+
+
+	public void inorder() {
+		// TODO Auto-generated method stub
+		inorder(root);
+
+	}
+
+
+	private void inorder(Node root2) {
+		if(root2==null){return;}
+	System.out.println(root.data);
+	inorder(root2.left);
+	inorder(root2.right);
+		
+	}}
