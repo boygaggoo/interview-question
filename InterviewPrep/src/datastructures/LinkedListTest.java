@@ -225,6 +225,19 @@ public class LinkedListTest {
 		n=n.next;
 	}
 	}
+	@Test
+	public void addFirstTest(){
+	ll.add(1);
+	ll.add(2);
+	ll.print();
+	ll.addFirst(3);
+	ll.print();
+	ll.addFirst(5);
+	ll.print();
+	ll.addFirst(4);
+	ll.print();
+	}
+	
 
 
 }

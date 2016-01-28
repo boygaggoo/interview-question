@@ -461,5 +461,17 @@ public Node partition2(int pKey) {
 	   return before;
 	
 }
+
+
+public void addFirst(Object data) {
+	Node first=new Node(data);
+	if(head==null){
+		head=first;
+	}else{
+		first.next=head;
+		head=first;
+	} 
+	 
+}
     
 }
