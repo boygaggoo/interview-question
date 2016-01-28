@@ -421,5 +421,45 @@ public Object removeKLast(int index) {
 	
 	return data;
 }
+/**
+ * This is my implementation of partitioning nodes 
+ * @param pKey
+ * @return 
+ */
+
+public Node partition2(int pKey) {
+	Node before=null,after=null,partition=null;
+	Node curr=head;
+	
+	while(curr!=null){
+		if((int)curr.data<pKey){
+			if(before==null){
+				before=curr;
+			}
+			else{
+				before.next=curr;
+			}
+			//before=before.next;
+		}
+		else if ((int)curr.data>pKey){
+			if(after==null){
+				after=curr;
+			}
+			else{
+				after.next=curr;
+			}
+			//after=after.next;
+		}
+		else{
+			partition=curr;
+		}
+			curr=curr.next;
+		}
+	
+	   partition.next=after;
+	   before.next=partition;
+	   return before;
+	
+}
     
 }
