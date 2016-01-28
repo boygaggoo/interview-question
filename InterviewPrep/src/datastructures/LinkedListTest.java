@@ -21,8 +21,15 @@ public class LinkedListTest {
 	@Test
 	public void addAtTest(){
 		ll.add(1);
-		ll.add("test");
-		ll.addAt(0,"wow");
+		ll.add(2);
+		ll.add(3);
+		ll.print();
+		ll.addAt(1,4);
+		ll.print();
+		ll.addAt(0,0);
+		ll.print();
+		ll.addAt(3,5);
+		ll.print();
 		
 	}
 	@Test
@@ -212,14 +219,12 @@ public class LinkedListTest {
 	@Test
 	public void partitionTest2(){
 	ll.add(1);
-	ll.add(3);
-	ll.add(4);
 	ll.add(5);
-	ll.add(2);
-	ll.add(9);
+	ll.add(7);
 	ll.add(3);
+	ll.add(2);
 	ll.print();
-	Node n=ll.partition2(5);
+	Node n=ll.partition2(2);
 	while(n!=null){
 		System.out.println(n.data);
 		n=n.next;

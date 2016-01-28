@@ -67,12 +67,23 @@ public class LinkedList {
 	public void addAt(int index, Object data) {
 		Node newNode=new Node(data);
 		Node curr=head;
-		int count=0;
-		if(index>size||index<0){
+		if(index==0){
+			newNode.next=head;
+			head=newNode;
+			
+		}
+		else{
+		for(int i=0;i<index-1;i++){
+			curr=curr.next;
+		}
+		newNode.next=curr.next;
+		curr.next=newNode;
+		}
+	/*	if(index>size||index<0){
 		    throw new IndexOutOfBoundsException("Size of LinkedList is:"+size());
 		}
-		while(curr!=null){
-			if(count==index){
+		while(curr.next!=null){
+			if(count==index-1){
 				break;
 			}
 			curr=curr.next;
@@ -80,7 +91,7 @@ public class LinkedList {
 			
 		}
 		newNode.next=curr.next;
-		curr.next=newNode;
+		curr.next=newNode;*/
 		size++;
 		
 		
@@ -455,9 +466,10 @@ public Node partition2(int pKey) {
 		}
 			curr=curr.next;
 		}
-	
+		before.next=partition;
+		after.next=null;
 	   partition.next=after;
-	   before.next=partition;
+	  
 	   return before;
 	
 }
