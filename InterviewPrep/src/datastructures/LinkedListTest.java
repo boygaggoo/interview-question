@@ -236,6 +236,7 @@ public class LinkedListTest {
 	ll.print();
 	ll.addFirst(4);
 	ll.print();
+	
 	}
 	
 
