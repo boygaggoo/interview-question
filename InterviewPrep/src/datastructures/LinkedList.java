@@ -79,19 +79,6 @@ public class LinkedList {
 		newNode.next=curr.next;
 		curr.next=newNode;
 		}
-	/*	if(index>size||index<0){
-		    throw new IndexOutOfBoundsException("Size of LinkedList is:"+size());
-		}
-		while(curr.next!=null){
-			if(count==index-1){
-				break;
-			}
-			curr=curr.next;
-			count++;
-			
-		}
-		newNode.next=curr.next;
-		curr.next=newNode;*/
 		size++;
 		
 		
@@ -485,5 +472,81 @@ public void addFirst(Object data) {
 	} 
 	 
 }
-    
+
+
+public Node reverse() {
+	return reverse(head);
+	
+}
+/**
+ * Interview question to reverse the LinkedList with no additional data structure
+ * Approach: 1->2->3->4   (2->3->4)->1
+ * Ref:https://www.youtube.com/watch?v=LgapVjJYxqc
+ * @param head
+ * @return
+ */
+
+private Node reverse(Node head) {
+	// TODO Auto-generated method stub
+	if(head==null||head.next==null){
+		return head;
+	}
+	Node remainNodes=reverse(head.next);
+	Node curr=remainNodes;
+	while(curr.next!=null){
+		curr=curr.next;
+	}
+	curr.next=head;
+	head.next=null;
+	return remainNodes;
+}
+public Node reverse2(){
+	Node temp1=head;
+	Node temp2=head.next;
+	Node temp5; 
+	while(temp2!=null){
+		temp5=temp2.next;
+		if (temp5==null)
+			break;
+		temp2.next=temp1 ;
+		temp2=temp5;
+		temp1=temp1.next;
+		
+	}
+	temp2.next=temp1;
+/*	temp1.next=null;
+    temp2.next=temp1;*/
+	return temp2;
+}
+/**
+ * This is the iterative solution for reversing 
+ * @return
+ */
+public Node reverse3(){
+	Node p=head,q=head,ref;
+	int count=1;
+	while(q.next!=null){
+		count++;
+	    q=q.next;
+	}
+	for(int i=1;i<count-1;i++){
+		p=p.next;
+	}
+	int refCount=count;
+	ref=q;
+	while(refCount>1){
+	
+		q.next=p;
+		p.next=null;
+		q=q.next;
+		count--;
+		 p=head;
+	    for(int i=1;i<count-1;i++){
+			p=p.next;
+		}
+		refCount--;
+	}
+	return ref;
+	
+}
 }

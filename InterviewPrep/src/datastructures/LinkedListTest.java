@@ -243,6 +243,28 @@ public class LinkedListTest {
 	ll.print();
 	
 	}
+	@Test
+	public void reverseTest(){
+	ll.add(1);
+	ll.add(2);
+	ll.add(3);
+	ll.add(4);
+	ll.print();
+  /* Node result=	ll.reverse3();
+    while(result!=null){
+    	System.out.print(result.data+" ");
+    	result=result.next;
+    }*/
+    Node result2=ll.reverse2();
+    for(int i=0;i<10;i++){
+    	System.out.print(result2.data+" ");
+    	result2=result2.next;
+    }
+/*    while(result2!=null){
+    	System.out.print(result2.data+" ");
+    	result2=result2.next;
+    }*/
+	}
 	
 
 
