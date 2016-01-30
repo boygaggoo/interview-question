@@ -16,4 +16,37 @@ public class Operations {
 	     System.out.println("Value i:"+i+"\n Value of j:"+j);
 	}
 
+	/**
+	 * The requirement is to multiply with only using
+	 * the + operator
+	 * @param i
+	 * @param j
+	 * @return 
+	 */
+	public static int multiply(int n, int m) {
+	    int sol=0;
+		for(int i=0;i<m;i++){
+		    sol+=n;
+		}
+		return sol;
+	}
+	/**
+	 * The requirement is to divide with only using
+	 * the + operator
+	 * @param numerator
+	 * @param denominator
+	 * @return 
+	 */
+
+	public static int divide(int num, int deno) {
+		// TODO Auto-generated method stub
+		int result=0;
+		int sol=0;
+		while(sol<num){
+		     result+=1;
+		     sol+=deno;
+			}
+		return result;
+	}
+
 }
