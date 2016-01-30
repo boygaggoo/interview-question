@@ -8,7 +8,8 @@ public class OperationsTest {
 
 	@Test
 	public void test() {
-	Operations.swapNumbers(1,2);
+	Operations.swapNumbers(10,23);
+
 
 	}
 	@Test
