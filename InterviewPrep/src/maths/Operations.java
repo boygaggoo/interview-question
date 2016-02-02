@@ -48,5 +48,24 @@ public class Operations {
 			}
 		return result;
 	}
+/**
+ * Subtracting two numbers without using '-' operator
+ * @param a
+ * @param b
+ * @return
+ */
+	public static int substract(int a, int b) {
+		int count=0;
+		for(int i=b;i<a;i++){
+			count++;
+		}
+		if(a<b){
+			for(int i=a;i<b;i++){
+				count++;
+			}
+			return -count;
+		}
+		return count;
+	}
 
 }
