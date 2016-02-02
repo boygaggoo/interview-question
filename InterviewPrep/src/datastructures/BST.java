@@ -44,6 +44,47 @@ public class BST {
 		
 		
 	}
+	public void print() {
+	
+		printBinaryTree(root, 0);
+	  
+		
+	}
+	
+	public static void printBinaryTree(BSTNode root, int level){
+	    if(root==null)
+	         return;
+	    printBinaryTree(root.right, level+1);
+	    if(level!=0){
+	        for(int i=0;i<level-1;i++)
+	            System.out.print("|\t");
+	            System.out.println("|-------"+root.data);
+	    }
+	    else
+	        System.out.println(root.data);
+	    printBinaryTree(root.left, level+1);
+	}
+	public Object min() {
+		BSTNode temp=root;
+		if(temp==null){
+			return -1;
+		}
+		while(temp.left!=null){
+			temp=temp.left;
+		}
+		return temp.data;
+		
+	}
+	public Object max() {
+	BSTNode temp=root;
+	if(temp==null){
+		return -1;
+	}
+	while(temp.right!=null){
+		temp=temp.right;
+	}
+		return temp.data;
+	}    
 
 	
 	

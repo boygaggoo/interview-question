@@ -12,6 +12,8 @@ public class BSTTest {
 		tree.insert(10);
 		tree.insert(2);
 		tree.insert(11);
+		tree.print();
+	
 		for(int i=0;i<200;i+=7){
 			tree.insert(i);
 		}
@@ -26,6 +28,23 @@ public class BSTTest {
 			assertEquals(false,tree.search(i));
 		}
 		
+	}
+	@Test
+	public void minMaxTest(){
+		BST tree=new BST(5);
+		tree.insert(10);
+		tree.insert(2);
+		tree.insert(11);
+		tree.insert(1);
+		tree.insert(0);
+		tree.insert(0);
+		assertEquals(11, tree.max());
+		assertEquals(0, tree.min());
+		for(int i=0;i<30;i++){
+			tree.insert(i);
+		}
+		assertEquals(0, tree.min());
+		assertEquals(29, tree.max());
 	}
 
 }
