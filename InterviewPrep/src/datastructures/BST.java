@@ -223,10 +223,61 @@ public class BST {
 	    else
 		return false;
 	}
+	/**
+	 * Method to delete a node from BST
+	 * @param i
+	 */
+	public void delete(int data) {
+		delete(root,data);
+		
+	}
+	private BSTNode delete(BSTNode root, int data) {
+		if(root==null)
+			return null;
+		else if(data<(int)root.data){
+			root.left=delete(root.left, data);
+		}
+			else if(data>(int)root.data){
+		     root.right=delete(root.right, data);		
+			}
+			else{
+				//Case 1:If there is no child
+				if(root.left==null&&root.right==null){
+					root=null; 
+				}
+				//Case2: Only one child
+				else if(root.left==null){
+					BSTNode temp=root;
+					root=root.right;
+					temp=null;
+					}
+				
+				else if(root.right==null){
+					BSTNode temp=root;
+					root=root.left;
+					temp=null;
+					}
+				//case 3:Two children
+				else{
+					BSTNode temp=FindMin(root.right);
+					root.data=temp.data;
+					root.right=delete(root.right, (int)temp.data);
+				}
+			}
+		return root;
+		}
+	private BSTNode FindMin(BSTNode node) {
+		// TODO Auto-generated method stub
+		while(node.left!=null){
+			node=node.left;
+		}
+		return node;
+	}
+	}
 	
 	
 	
 
 	
 	
-}
+

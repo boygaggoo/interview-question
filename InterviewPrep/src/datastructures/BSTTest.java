@@ -76,6 +76,7 @@ public class BSTTest {
 	/**
 	 * Check if a binary tree is binary search tree
 	 */
+	
 	@Test
 	public void bstTest(){
 		BST tree=new BST(10);
@@ -85,6 +86,26 @@ public class BSTTest {
 		
 		assertEquals(true, tree.bstTest());
 		assertEquals(true, tree.isBST());
+	}
+	@Test
+	public void deleteNodeTest(){
+		BST tree=new BST(10);
+		tree.insert(4);
+		tree.insert(13);
+		tree.insert(9);
+		tree.insert(3);
+		tree.insert(12);
+		tree.insert(14);
+		
+		
+		tree.print();
+		tree.delete(14);
+		System.out.println("\n\nAfter deleting\n\n");
+		
+		tree.delete(4);
+		System.out.println("\n\nAfter deleting\n\n");
+		tree.print();
+		
 	}
 
 }
