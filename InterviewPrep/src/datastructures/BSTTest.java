@@ -46,5 +46,45 @@ public class BSTTest {
 		assertEquals(0, tree.min());
 		assertEquals(29, tree.max());
 	}
+	@Test
+	public void heightTest(){
+		BST tree=new BST(5);
+		tree.insert(1);
+		tree.insert(10);
+		assertEquals(1, tree.height());
+		for(int i=0;i<20;i++){
+			tree.insert(10);
+		}
+		assertEquals(21, tree.height());
+	}
+	@Test
+	public void orderTest(){
+		BST tree=new BST(5);
+		for(int i=0;i<20;i++){
+			tree.insert(i);
+		}
+		System.out.println("INORDER");
+		tree.inorder();
+		System.out.println("PREORDER");
+		tree.preorder();
+		System.out.println("POSTORDER");
+		tree.postorder();
+		System.out.println("LEVELORDER");
+		tree.levelorder();
+		
+	}
+	/**
+	 * Check if a binary tree is binary search tree
+	 */
+	@Test
+	public void bstTest(){
+		BST tree=new BST(10);
+		for(int i=0;i<5;i++){
+			tree.insert(i);
+		}
+		
+		assertEquals(true, tree.bstTest());
+		assertEquals(true, tree.isBST());
+	}
 
 }

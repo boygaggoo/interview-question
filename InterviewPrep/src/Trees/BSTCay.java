@@ -17,19 +17,7 @@ public class BSTCay {
 		else{root.addNode(nw);}
 	}
 	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    
-	class Node{
+class Node{
 		
 		Comparable data;
 		Node left;
@@ -51,35 +39,12 @@ public class BSTCay {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-	public boolean lookup(Comparable data) {
+public boolean lookup(Comparable data) {
 		return lookup(root, data);
 		
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-	private boolean lookup(Node n, Comparable data) {
+private boolean lookup(Node n, Comparable data) {
 		// TODO Auto-generated method stub
 		int temp=data.compareTo(n.data);
 		 if (n==null) { 
