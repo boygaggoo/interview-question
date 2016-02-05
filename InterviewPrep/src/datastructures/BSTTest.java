@@ -107,5 +107,17 @@ public class BSTTest {
 		tree.print();
 		
 	}
+	@Test
+	public void LCATest(){
+		BST tree=new BST(10);
+		tree.insert(4);
+		tree.insert(13);
+		tree.insert(9);
+		tree.insert(3);
+		tree.insert(12);
+		tree.insert(14);
+		tree.print();
+		System.out.println(tree.LCA(3, 9));
+	}
 
 }

@@ -273,6 +273,30 @@ public class BST {
 	}
 		return node;
 	}
+	public Object LCA(Object a,Object b){
+		return LCA(root,a,b).data;
+	}
+	private BSTNode LCA(BSTNode root, Object a, Object b) {
+		if (root == null) {
+		       return null;
+		   }
+
+		   // If the root is one of a or b, then it is the LCA
+		   if (root == a || root == b) {
+		       return root;
+		   }
+
+		  BSTNode left = LCA(root.left, a, b);
+		   BSTNode right = LCA(root.right, a, b);
+
+		   // If both nodes lie in left or right then their LCA is in left or right,
+		   // Otherwise root is their LCA
+		   if (left != null && right != null) {
+		      return root;
+		   }
+
+		   return (left != null) ? left : right; 
+	}
 	}
 	
 	
