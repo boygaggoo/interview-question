@@ -13,12 +13,12 @@ public class SortAlgosTest {
 	 int [] a={4,3,1,2,7,10,9,8,-1,-4,-10,-7,5,3,4};
 //
 //	 Util.printArray(SelectionSort.sort(a));
-//	 Util.printArray(BubbleSort.sort(a));
+	 Util.printArray(BubbleSort.sort(a));
 //	 Util.printArray(InsertionSort.sort(a));
 //	 Util.printArray(MergeSort.sort(a));
-	 for(int i=0;i<20;i++){
+	/* for(int i=0;i<20;i++){
 	 Util.printArray(QuickSort.sort(a));
-	 }
+	 }*/
 	}
 
 }
