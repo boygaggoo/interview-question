@@ -114,8 +114,10 @@ public class LinkedList {
 			}else{
 				table.add(pointer.data);
 				prev=pointer;
+			
 			}
 			pointer=pointer.next;
+		
 		}
 		
 	}
