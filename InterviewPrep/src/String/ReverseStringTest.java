@@ -11,6 +11,8 @@ public class ReverseStringTest {
 		assertEquals("olleh",ReverseString.reverseUsingIteration("hello"));
 		assertEquals("tae",ReverseString.reverseUsingIteration("eat"));
 		assertEquals("tae",ReverseString.reverseUsingRecursion("eat"));
+		assertEquals("tae",ReverseString.reverseUsingRecursion2("eat"));
+		assertEquals("racecar",ReverseString.reverseUsingRecursion2("racecar"));
 	}
 
 }
