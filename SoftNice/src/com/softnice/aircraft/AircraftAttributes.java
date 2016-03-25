@@ -1,5 +1,9 @@
 package com.softnice.aircraft;
-
+/**
+ * ENUM for attributes of AC
+ * @author Siddiq Ahmed Syed
+ *
+ */
 public enum AircraftAttributes {
    PASSENGER(4),CARGO(3),LARGE(2),SMALL(1);
    

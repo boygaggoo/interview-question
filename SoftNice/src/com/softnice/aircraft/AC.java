@@ -1,10 +1,18 @@
 package com.softnice.aircraft;
-
+/**
+ * Aircraft Class
+ * @author Siddiq Ahmed Syed
+ *
+ */
 public class AC  {
 	private AircraftAttributes type;
 	private AircraftAttributes size;
 
-    
+    /**
+     * Contructor
+     * @param type of AC
+     * @param size of AC
+     */
 	public AC(String type, String size) {
 		
 		if(type.toLowerCase().equals("passenger")){
@@ -20,12 +28,18 @@ public class AC  {
 			this.size=AircraftAttributes.LARGE;
 		}
 	}
-
+/**
+ * 
+ * @return the value of the AC
+ */
 	public int getType() {
 		
 		return type.getValue();
 	}
-
+/**
+ * 
+ * @return the size of AC
+ */
 	public int getSize() {
 		
 		return size.getValue();

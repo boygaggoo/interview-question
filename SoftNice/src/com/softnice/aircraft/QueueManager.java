@@ -4,9 +4,13 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * The main class for the AC
+ * @author Siddiq Ahmed Syed
+ *
+ */
 public class QueueManager implements Operations {
-    private List<AC> aircraft_queue=new LinkedList<AC>();
+    private List<AC> aircraft_queue=new LinkedList<AC>();//storing the AC
     private Scanner in; 
     
     public QueueManager() {
