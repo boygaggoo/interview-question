@@ -265,7 +265,35 @@ public class LinkedListTest {
     	result2=result2.next;
     }*/
 	}
-	
+	/**
+	 * One of the interview question
+	 */
+	@Test
+	public void printReverseTest(){
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		ll.add(4);
+		ll.print();
+	ll.printReverse();
+	}
+	@Test
+	public void printMiddle(){
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		ll.add(4);
+		ll.add(5);
+		ll.findMiddle();
+	}
+	@Test
+	public void insertInSorted(){
+		ll.add(3);//ll.add(2);ll.add(4);
+		ll.insertSorted(1);
+		ll.print();
+//		ll.insertSorted(3);
+//		ll.print();
+	}
 
 
 }

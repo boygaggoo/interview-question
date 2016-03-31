@@ -549,4 +549,54 @@ public Node reverse3(){
 	return ref;
 	
 }
+
+
+public void printReverse() {
+      printReverse(head);
+	
+}
+
+
+private void printReverse(Node curr) {
+	if(curr==null)
+		return;
+	printReverse(curr.next);
+	System.out.print(curr.data+" ");
+	
+}
+
+
+public void findMiddle() {
+	Node cur=head;
+	Node mid=head;
+	int len=0;
+	while(cur.next!=null){
+		len++;
+		if(len%2==0){
+			mid=mid.next;
+		}
+		cur=cur.next;
+		
+	}
+	System.out.println(mid.data);
+}
+
+
+public void insertSorted(int i) {
+	Node n=new Node(i);
+	if(head==null||(int)head.data>=(int)n.data){
+		n.next=head;
+		head=n;
+	}else{
+		Node curr=head;
+		Node forward=head.next;
+		while(forward!=null &&(int)forward.data<(int)n.data){
+			forward=forward.next;
+			curr=curr.next;
+		}
+		curr.next=n;
+		n.next=forward;
+	}
+	
+}
 }
