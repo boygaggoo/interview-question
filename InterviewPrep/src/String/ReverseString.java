@@ -27,4 +27,20 @@ public class ReverseString {
 		return str.charAt(str.length()-1)+reverseUsingRecursion2(str.substring(0,str.length()-1));
 	}
 
+	public static String reverseWithSpecialCharInPlace(String str) {
+		// TODO Auto-generated method stub
+		char [] strArray=str.toCharArray();
+		int end=strArray.length-1;
+		for(int i=0;i<strArray.length/2;i++){
+			if(Character.isLetter(strArray[i])&&Character.isLetter(strArray[end])){
+				char temp=strArray[i];
+				strArray[i]=strArray[end];
+				strArray[end]=temp;
+				
+			}
+			end--;
+		}
+		return new String(strArray);
+	}
+
 }

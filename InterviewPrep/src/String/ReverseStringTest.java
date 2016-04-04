@@ -13,6 +13,12 @@ public class ReverseStringTest {
 		assertEquals("tae",ReverseString.reverseUsingRecursion("eat"));
 		assertEquals("tae",ReverseString.reverseUsingRecursion2("eat"));
 		assertEquals("racecar",ReverseString.reverseUsingRecursion2("racecar"));
+		
+	}
+	@Test
+	public void test2(){
+		System.out.println( ReverseString.reverseWithSpecialCharInPlace("a,b$c"));
+		assertEquals("c,ba", ReverseString.reverseWithSpecialCharInPlace("a,bc"));
 	}
 
 }
