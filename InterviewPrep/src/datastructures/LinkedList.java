@@ -599,4 +599,11 @@ public void insertSorted(int i) {
 	}
 	
 }
+
+
+public Node getList() {
+	// TODO Auto-generated method stub
+	return head;
+}
+
 }

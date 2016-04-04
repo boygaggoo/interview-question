@@ -294,6 +294,20 @@ public class LinkedListTest {
 //		ll.insertSorted(3);
 //		ll.print();
 	}
+@Test
+	public void compareTwoList(){
+	ll.add('g');ll.add('e');ll.add('e');
+	LinkedList l2=new LinkedList();
+	ll.add('g');ll.add('e');
+	compare(ll,l2);
+	
+}
+
+private void compare(LinkedList l1, LinkedList l2) {
+/*	int i=0;
+	if(l)*/
+	
+}
 
 
 }
