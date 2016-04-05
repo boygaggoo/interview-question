@@ -9,11 +9,32 @@ public static void main(String[] args) {
 	int a[]={2,3,1,4,5};
 //	findSumPair(a,5);
 //	findSumPairEfficient(a,5);//uses additional memory O(n)
-	findSumPairEfficient2(a,5);//does not used addition memory O(nlogn)
-printPairsUsingTwoPointers(a, 5);
+	System.out.println(findSumPairEfficient2(a,5));//does not used addition memory O(nlogn)
+//printPairsUsingTwoPointers(a, 5);
 }
-private static void findSumPairEfficient2(int[] a, int k) {
+private static int findSumPairEfficient2(int[] a, int k) {
+	int count=0;
 	if(a.length<2){
+		return count;
+	}
+	Arrays.sort(a);
+	int i=0;
+	int j=a.length-1;
+	while(i<j){
+		int sum=a[i]+a[j];
+		if(sum==k){
+			System.out.println(a[i]+"+"+a[j]);
+			count++;
+			i++;
+			j--;
+		}else if(sum<k){
+			i++;
+		}else{
+			j--;
+		}
+	}
+	return count;
+	/*if(a.length<2){
 		return;
 	}
 	Arrays.sort(a);
@@ -32,7 +53,7 @@ private static void findSumPairEfficient2(int[] a, int k) {
 	else if (sum > k) {
        j=j-1;  
 	} 
-	}
+	}*/
 	
 }
 private static void findSumPairEfficient(int[] a, int sum) {
