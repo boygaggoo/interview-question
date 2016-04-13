@@ -606,4 +606,20 @@ public Node getList() {
 	return head;
 }
 
+
+public Object getKLastNode(int pos) {
+	Node slowRunner=head;
+	Node fastRunner=head;
+	int i=0;
+	while(i<pos){
+		fastRunner=fastRunner.next;
+		i++;
+	}
+	while(fastRunner!=null){
+		fastRunner=fastRunner.next;
+		slowRunner=slowRunner.next;
+	}
+	return slowRunner.data;
+}
+
 }

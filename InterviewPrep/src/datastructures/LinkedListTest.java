@@ -299,15 +299,17 @@ public class LinkedListTest {
 	ll.add('g');ll.add('e');ll.add('e');
 	LinkedList l2=new LinkedList();
 	ll.add('g');ll.add('e');
-	compare(ll,l2);
-	
+
+	}
+@Test
+public void getKLastNodeTest(){
+   for (int i=0;i<3;i++){
+	   ll.add(i);
+   }
+   System.out.println(ll.getKLastNode(2));
 }
 
-private void compare(LinkedList l1, LinkedList l2) {
-/*	int i=0;
-	if(l)*/
-	
-}
+
 
 
 }

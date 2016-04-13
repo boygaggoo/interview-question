@@ -5,25 +5,30 @@ import java.util.Arrays;
 public class PythogoreanTripplet {
 	public static void main(String[] args) {
 		int [] a={3,1,4,6,5};
-		System.out.println(triplet(a));
+		//System.out.println(triplet(a));
 		System.out.println(efficientTripplet(a));
 	}
 
 	private static boolean efficientTripplet(int[] a) {
-		// TODO Auto-generated method stub
-		Arrays.sort(a);
-		for(int i=0;i<a.length;i++){
-			a[i]=(int)Math.pow(a[i], 2);
-		}
-		int last=a.length-1;
-		while(last>0){
-			for(int i=0;i<last;i++){
-				if(a[i]+a[i+1]==a[last]){
-					return true;
-				}
+	Arrays.sort(a);
+	for(int i=0;i<a.length;i++){
+		a[i]=a[i]*a[i];
+	}
+	for(int i=a.length-1;i>=2;i--){
+	int last=i-1;
+	int first=0;
+	while(first<last){
+		
+			if(a[first]+a[last]==a[i]){
+				return true;
 			}
-			last--;
+			if(a[first]+a[last]<a[i]){
+				first++;
+			}else{
+				last--;
+			}
 		}
+	}
 		return false;
 	}
 
