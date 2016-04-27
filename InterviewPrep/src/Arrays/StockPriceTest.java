@@ -31,6 +31,7 @@ public class StockPriceTest {
 		assertEquals(10,StockPrice.simpleSolution(a));
 		assertEquals(11,StockPrice.simpleSolution(b));
 		assertEquals(11,StockPrice.simpleSolutionWithIndexes(b)[2]);
+		System.out.println(Arrays.toString(StockPrice.simpleSolutionWithIndexes(b)));
 		
 	}
 

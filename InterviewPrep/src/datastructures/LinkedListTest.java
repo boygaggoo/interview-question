@@ -309,7 +309,13 @@ public void getKLastNodeTest(){
    System.out.println(ll.getKLastNode(2));
 }
 
-
+@Test
+public void reversePrintTest(){
+	 for (int i=0;i<5;i++){
+		   ll.add(i);
+	   }
+	 ll.printReverse2();
+}
 
 
 }

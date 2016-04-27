@@ -622,4 +622,20 @@ public Object getKLastNode(int pos) {
 	return slowRunner.data;
 }
 
+
+public void printReverse2() {
+	printReverse2(head);
+	
+}
+
+
+private void printReverse2(Node head) {
+    if(head.next==null){
+    	System.out.println(head.data); 
+    	return;
+    	 }
+    printReverse(head.next);
+	
+}
+
 }
