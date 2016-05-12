@@ -3,7 +3,10 @@ package String;
 public class ReplaceSpaces {
 public static void main(String[] args) {
 	System.out.println(replace("my name is","%20"));
+	
 }
+
+
 
 private static String replace(String str, String repl) {;
 	char [] strArray=str.toCharArray();
