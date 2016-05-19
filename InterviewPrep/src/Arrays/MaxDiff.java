@@ -21,4 +21,26 @@ public static int diff(int[] a) {
 	}
 	return maxDiff;
 }
+
+public static int profit(int[] a) {
+	int i=0;
+	int j=a.length;
+	int min=Integer.MAX_VALUE;
+	int max=Integer.MIN_VALUE;
+	int minIndex=0;
+	int MaxIndex=0;
+	while(i<j){
+		if(a[i]<min){
+			min=a[i];
+			minIndex=i;
+		}
+		if(a[i]>max){
+			max=a[i];
+			MaxIndex=i;
+		}
+		i++;
+	}
+	System.out.println(minIndex+","+MaxIndex);
+	return max-min;
+}
 }

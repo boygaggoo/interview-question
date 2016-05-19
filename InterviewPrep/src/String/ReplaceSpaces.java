@@ -8,7 +8,7 @@ public static void main(String[] args) {
 
 
 
-private static String replace(String str, String repl) {;
+private static String replace(String str, String repl) {
 	char [] strArray=str.toCharArray();
 	for(int i=0;i<str.length();i++){
 		if(str.charAt(i)==' '){
