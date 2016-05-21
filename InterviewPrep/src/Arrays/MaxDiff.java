@@ -9,10 +9,10 @@ public class MaxDiff {
 
 public static int diff(int[] a) {
 	int maxDiff=0;
-	int min=Integer.MAX_VALUE;
+	int min=Integer.MAX_VALUE;//1,4,0
 	for(int i=0;i<a.length;i++){
 		if(a[i]<min){
-			min=a[i];
+			min=a[i];//0
 		}
 		int diff=a[i]-min;
 		if(diff>maxDiff){
@@ -43,4 +43,5 @@ public static int profit(int[] a) {
 	System.out.println(minIndex+","+MaxIndex);
 	return max-min;
 }
+
 }

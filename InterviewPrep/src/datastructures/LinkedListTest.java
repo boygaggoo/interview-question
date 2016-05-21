@@ -316,6 +316,14 @@ public void reversePrintTest(){
 	   }
 	 ll.printReverse2();
 }
+@Test
+public void removeValuesGreaterThanTest(){
+	 for (int i=0;i<=5;i++){
+		   ll.add(i);
+	   }
+//	 ll.print();
+	 ll.removeValuesGreaterThan(3);
+}
 
 
 }

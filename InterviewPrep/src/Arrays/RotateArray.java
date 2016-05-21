@@ -13,6 +13,8 @@ private static void rotate(int[][] a, int rot) {
 	int len=a.length;
      for(int i=0;i<a.length;i++){
     	 for(int j=0;j<a.length;j++){
+    		 int temp=a[j][len-1-i];
+    		 a[j][len-1-i]=a[i][j];
     		 System.out.println(a[j][len-1-i]+"="+a[i][j]);
     	 }
      }

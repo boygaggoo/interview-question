@@ -638,4 +638,21 @@ private void printReverse2(Node head) {
 	
 }
 
+
+public void removeValuesGreaterThan(int value) {
+	Node curr=new Node();
+	Node curr2=head;
+	while(curr2!=null){
+		
+		if((int)curr2.data<value){
+			
+			curr.next=curr2;
+		}
+		curr2=curr2.next;
+	}
+	curr.next=null;
+	print();
+	
+}
+
 }

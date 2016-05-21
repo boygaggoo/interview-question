@@ -9,5 +9,8 @@ public class Node {
     	 next=null;
     	 
      }
+	public Node() {
+		// TODO Auto-generated constructor stub
+	}
      
 }
