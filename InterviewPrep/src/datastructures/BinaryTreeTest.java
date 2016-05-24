@@ -173,5 +173,17 @@ public class BinaryTreeTest {
 		bt.pathWithSpecifiedSum(34);
 		
 	}
+	@Test
+	public void LCATest(){
+		BinaryTree bt=new BinaryTree();
+		bt.insert(10);
+		bt.insert(4);
+		bt.insert(19);
+		bt.insert(1);
+		bt.insert(2);
+		bt.insert(22);
+		bt.pathWithSpecifiedSum(34);
+		
+	}
 
 }

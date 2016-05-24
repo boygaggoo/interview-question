@@ -345,6 +345,13 @@ public class BinaryTree {
 		
 	}
 
+	public void LCA(int root, int left, int right) {
+		if(left<root&&right<root){
+			
+		}
+		
+	}
+
 }
 
 class NodeBT{
