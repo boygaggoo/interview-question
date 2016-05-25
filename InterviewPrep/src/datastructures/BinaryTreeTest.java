@@ -180,9 +180,8 @@ public class BinaryTreeTest {
 		bt.insert(4);
 		bt.insert(19);
 		bt.insert(1);
-		bt.insert(2);
-		bt.insert(22);
-		bt.pathWithSpecifiedSum(34);
+		
+		System.out.println(bt.LCA(19,1));
 		
 	}
 

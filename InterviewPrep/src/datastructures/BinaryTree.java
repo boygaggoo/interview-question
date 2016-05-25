@@ -345,11 +345,24 @@ public class BinaryTree {
 		
 	}
 
-	public void LCA(int root, int left, int right) {
-		if(left<root&&right<root){
-			
-		}
+	public int LCA(int left, int right) {
+	  return (int)LCA(root,left,right).data;
 		
+	}
+
+	private NodeBT LCA(NodeBT root, int left, int right) {
+		if(root==null){
+			return null;
+		}
+		if((int)root.data==left||(int)root.data==right){
+			return root;
+		}
+		NodeBT leftNode=LCA(root.left, left, right);
+		NodeBT righNode=LCA(root.right, left, right);
+		if(leftNode!=null&&righNode!=null){
+			return root;
+		}
+		return leftNode!=null?leftNode:righNode;
 	}
 
 }
