@@ -3,7 +3,7 @@ public class DayFive {
 	
 
 }
-class Person {
+/*class Person {
     private int age;	
   
 	public Person(int initialAge) {
@@ -29,6 +29,6 @@ class Person {
 
 	public void yearPasses() {
   		age++;
-	}
+	}*/
 	
-}
+
