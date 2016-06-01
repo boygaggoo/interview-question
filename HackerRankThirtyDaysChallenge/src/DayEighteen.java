@@ -25,7 +25,7 @@ public class DayEighteen {
 
 	    }
 }
-class Calculator{
+/*class Calculator{
 
 	public int power(int n, int p) throws Exception {
 		// TODO Auto-generated method stub
@@ -35,4 +35,4 @@ class Calculator{
 		return (int)Math.pow(n, p);
 	}
 	
-}
+}*/
