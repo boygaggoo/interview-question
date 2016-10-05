@@ -75,7 +75,7 @@ public class BTIdeserve {
 	 
 	    public static void main(String[] args) {
 	        BTIdeserve tree = new BTIdeserve();
-	        tree.createSampleTree();
+	        tree.createSampleTree3();
 	        System.out.println("InOrder:");
 	        tree.printInOrder();
 	        System.out.println("\nPreOrder:");
@@ -94,12 +94,76 @@ public class BTIdeserve {
 	        tree.printRootToLeafPaths();
 	        System.out.println("\nMinimum Depth");
 	        tree.minimumDepth();
+	        System.out.println("\nSum of leaves of left trees");
+	        tree.sumOfLeftLeaves();
+	        System.out.println("\ndepth-of-deepest-odd-level-leaf-node");
+	        tree.maxOddDepth();
+	        System.out.println("\nis full binary tree");
+	        tree.isFullBinaryTree();
 	        
 	      
 	        
 	    }
 	 
-	    private void printLeftView() {
+	    private void isFullBinaryTree() {
+			isFullBinaryTree(root);
+			
+		}
+
+		private void isFullBinaryTree(TreeNode root) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		private void maxOddDepth() {
+			System.out.print(maxOddDepth(root,0));
+			
+		}
+
+		private int maxOddDepth(TreeNode root, int currLevel) {
+			if (root == null)
+	            return 0;
+	        if (root.left == null && root.right == null && ((currLevel & 1) != 0))
+	            return currLevel;
+	        return Integer.max(maxOddDepth(root.left, currLevel + 1), maxOddDepth(root.right, currLevel + 1));
+		}
+
+		private void sumOfLeftLeaves() {
+	    	int [] sum=new int[1];
+			sumOfLeftLeaves(root,sum);
+			System.out.println(sum[0]);
+			
+		}
+
+		
+
+		private void sumOfLeftLeaves(TreeNode root,int[] sum) {
+		
+			if(root==null){
+				return;
+			}
+			if(isLeafNode(root.left)){
+				sum[0]+=root.left.data;
+			}
+		sumOfLeftLeaves(root.left,sum); 
+		sumOfLeftLeaves(root.right,sum);
+			
+			
+			
+		}
+
+		private boolean isLeafNode(TreeNode node) {
+			// TODO Auto-generated method stub
+			
+			if(node==null){
+				return false;
+			}
+			if(node.left==null&&node.right==null)
+				return true;
+			return false;
+		}
+
+		private void printLeftView() {
 			printLeftView(root,0);
 			
 		} int maxLevelSoFar=-1;
@@ -286,6 +350,41 @@ public class BTIdeserve {
 	        n6.right = n8;
 	        
 	      
+	    }
+	    /*
+        1
+  2             3
+4      5       6     7
+8              
+9
+*/
+	    public void createSampleTree3(){
+	    	 TreeNode n1   = new TreeNode(1);
+	         TreeNode n2   = new TreeNode(2);
+	         TreeNode n3   = new TreeNode(3);
+	         TreeNode n4   = new TreeNode(4);
+	         TreeNode n5   = new TreeNode(5);
+	         TreeNode n6   = new TreeNode(6);
+	         TreeNode n7   = new TreeNode(7);
+	         TreeNode n8   = new TreeNode(8);
+	         TreeNode n9   = new TreeNode(9);
+	          
+	         this.root = n1;
+	          
+	         root.left  = n2;
+	         root.right = n3;
+	          
+	         n2.left  = n4;
+	         n2.right = n5;
+	          
+	         n3.left  = n6;
+	         n3.right = n7;
+	          
+	         n4.right = n8;
+	          
+	         n8.left = n9;
+	          
+	         
 	    }
 	 
 	    
