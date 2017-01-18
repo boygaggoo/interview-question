@@ -1,11 +1,6 @@
 package random;
 
-/**
- * One of the interview questions
- * @author Siddiq Ahmed Syed
- *
- */
-public class ReverseString {
+public class ReverseeString {
 
 	public static void main(String[] args) {
 		System.out.println(reverse("hello"));
