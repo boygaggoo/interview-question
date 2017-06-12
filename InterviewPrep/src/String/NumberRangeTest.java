@@ -8,11 +8,7 @@ public class NumberRangeTest {
 
 	@Test
 	public void test() {
-		assertEquals("1:10,", NumberRange.findRange("1:5,1:10"));
-		assertEquals("1:10,", NumberRange.findRange("1:5,1:10"));
-		  assertEquals("1:30,",NumberRange.findRange("1:30"));
-	      assertEquals("1:7,", NumberRange.findRange("1:5,1:7"));
-	      assertEquals("1:7,", NumberRange.findRange("1:5,2:7"));
+
 	        
 	     /*   assertEquals("1:30",CompactAndSort.compactAndSort("1:30"));
 	        assertEquals("1:10",CompactAndSort.compactAndSort("6:10 , 1:5"));
