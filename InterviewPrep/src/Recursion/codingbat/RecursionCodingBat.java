@@ -28,4 +28,70 @@ public class RecursionCodingBat {
 			return 2 + bunnyEars2(bunnies - 1);
 		}
 	}
+
+	/**
+	 * 
+	 * We have triangle made of blocks. The topmost row has 1 block, the next
+	 * row down has 2 blocks, the next row has 3 blocks, and so on. Compute
+	 * recursively (no loops or multiplication) the total number of blocks in
+	 * such a triangle with the given number of rows.
+	 * 
+	 * triangle(0) → 0 triangle(1) → 1 triangle(2) → 3 triangle(3)->6
+	 * triangle(4)->10
+	 * 
+	 * @param rows
+	 * @return
+	 */
+	public static int triangle(int rows) {
+		if (rows == 0) {
+			return 0;
+		}
+		if (rows == 1) {
+			return 1;
+		}
+		return rows + triangle(rows - 1);
+	}
+
+	/**
+	 * Given a non-negative int n, return the sum of its digits recursively (no
+	 * loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is
+	 * 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
+	 * 
+	 * sumDigits(126) → 9 sumDigits(49) → 13 sumDigits(12) → 3
+	 * 
+	 * @param n
+	 * @return
+	 */
+
+	public int sumDigits(int n) {
+		if (n == 0) {
+			return 0;
+		}
+		if (n < 10) {
+			return n;
+		}
+		return sumDigits(n / 10) + sumDigits(n % 10);
+	}
+
+	/**
+	 * 
+	 * Given a non-negative int n, return the count of the occurrences of 7 as a
+	 * digit, so for example 717 yields 2. (no loops). Note that mod (%) by 10
+	 * yields the rightmost digit (126 % 10 is 6), while divide (/) by 10
+	 * removes the rightmost digit (126 / 10 is 12).
+	 * 
+	 * count7(717) → 2 count7(7) → 1 count7(123) → 0
+	 * 
+	 * @param n
+	 * @return
+	 */
+	public int count7(int n) {
+		if (n == 7) {
+			return 1;
+		} else if (n < 10) {
+			return 0;
+		}
+		return count7(n / 10) + count7(n % 10);
+	}
+
 }
