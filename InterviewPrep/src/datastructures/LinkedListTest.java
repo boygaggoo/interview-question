@@ -325,5 +325,15 @@ public void removeValuesGreaterThanTest(){
 	 ll.removeValuesGreaterThan(3);
 }
 
-
+@Test
+public void reverseLinkedList(){
+	 for (int i=0;i<5;i++){
+		   ll.add(i);
+	   }
+	 ll.reverseRecursively();
 }
+	
+}
+
+
+

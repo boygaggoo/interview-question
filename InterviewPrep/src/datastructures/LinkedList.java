@@ -681,4 +681,17 @@ public void removeValuesGreaterThan(int value) {
 	
 }
 
+
+public void reverseRecursively() {
+	reverseRecursive(head);
+
+}
+public void reverseRecursive(Node n){
+     if(n!=null){
+    	 reverseRecursive(n.next);{
+    		 System.out.print(n.data+" ");
+    	 }
+     }	
+}
+
 }
