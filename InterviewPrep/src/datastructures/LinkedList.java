@@ -693,5 +693,29 @@ public void reverseRecursive(Node n){
     	 }
      }	
 }
+/**
+ * Given a singly linked list, write a function to swap elements pairwise. For example, 
+ * if the linked list is 1->2->3->4->5 then the function should change it to 2->1->4->3->5, 
+ * and if the linked list is 1->2->3->4->5->6 then the function should change it to 2->1->4->3->6->5.
+ */
+public void pairwiseSwap(){
+pairwiseSwap(head);
+}
+
+
+private void pairwiseSwap(Node head) {
+	Node temp=head;
+	if(temp==null)
+		return;
+	if(temp!=null&&temp.next.next!=null){
+		int data=(int)temp.data;
+		temp.data=temp.next.next.data;
+		temp.next.next.data=data;
+		
+		
+	}
+	pairwiseSwap(head.next);
+	
+}
 
 }

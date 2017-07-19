@@ -332,6 +332,15 @@ public void reverseLinkedList(){
 	   }
 	 ll.reverseRecursively();
 }
+@Test
+public void pairwiseSwapTest(){
+	 for (int i=0;i<5;i++){
+		   ll.add(i);
+	   }
+	 ll.print();
+	 ll.pairwiseSwap();
+	 ll.print();
+}
 	
 }
 
